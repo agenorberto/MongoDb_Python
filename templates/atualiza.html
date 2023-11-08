@@ -6,20 +6,24 @@
     <title>Cadastro de veículo</title>
 </head>
 <body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+    <a class="navbar-brand" href="/">Início</a>
+    <a class="navbar-brand" href="/cadastra">Cadastrar</a>
+</nav>
+
 <div class="container">
     <div>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav lass="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="Listar veiculos" href="/">Página inicial</a>
+                        <a class="navbar-brand" href="/">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="Listar veiculos" href="/listar">Lista veículos</a>
+                        <a class="navbar-brand" href="/cadastra">Cadastrar</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/cadastrar">Cadastrar</a>
-                    </li>
+
                 </ul>
             </div>
         </nav>
@@ -28,34 +32,38 @@
     <h1>Cadastro</h1>
 
     <form action="/atualiza_bd" method="post">
-        <input type="hidden" name="id" id="id" value="{{carros._id}}">
+    <input type="hidden" name="id" id="id" value="{{carros._id}}">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <label class="form-label">Marca:</label>
+                <input class="form-control" type="text" name="marca" id="marca" value="{{carros.marca}}" />
+            </div>
+            <div class="col-md-4 mb-3">
+                <label class="form-label">Modelo:</label>
+                <input class="form-control" type="text" name "modelo" id="modelo" value="{{carros.modelo}}" />
+            </div>
+            <div class="col-md-4 mb-3">
+                <label class="form-label">Ano:</label>
+                <input class="form-control" type="text" name="ano" id="ano" value="{{carros.ano}}" />
+            </div>
+            <div class="col-md-4 mb-3">
+                <label class="form-label">Preço:</label>
+                <input class="form-control" type="text" name="preco" id="preco" value="{{carros.preco}}" />
+            </div>
+            <div class="col-md-4 mb-3">
+                <label class="form-label">Categoria:</label>
+                <input class="form-control" type="text" name="categoria" id="categoria" value="{{carros.categoria}}" />
+            </div>
+            <div class="col-md-4 mb-3">
+                <label class="form-label">Placa:</label>
+                <input class="form-control" type="text" name="placa" id="placa" value="{{carros.placa}}" />
+            </div>
+        </div>
+    </div>
+    <input class="btn btn-primary" type="submit" value="Atualizar veículo">
+</form>
 
-        <div class="mb-3">
-            <label class="form-label">Marca:</label>
-            <input class="form-control" type="text" name="marca" id="marca" value="{{carros.marca}}" />
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Modelo:</label>
-            <input class="form-control" type="text" name="modelo" id="modelo" value="{{carros.modelo}}"/>
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Ano:</label>
-            <input class="form-control" type="text" name="ano" id="ano" value="{{carros.ano}}" />
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Preço:</label>
-            <input class="form-control" type="text" name="preco" id="preco" value="{{carros.preco}}" />
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Categoria:</label>
-            <input class="form-control" type="text" name="categoria" id="categoria" value="{{carros.categoria}}" />
-        </div>
-
-        <label>Placa:</label>
-        <input type="text" name="placa" id="placa" value="{{carros.placa}}"><br>
-
-        <input class="btn btn-primary" type="submit" value="Atualizar veículo">
-    </form>
 </div>
 </body>
 </html>
